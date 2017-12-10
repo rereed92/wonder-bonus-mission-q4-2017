@@ -1,11 +1,11 @@
-const gulp = require('gulp');
-const sass = require('gulp-sass');
-const browserSync = require('browser-sync').create();
-const useref = require('gulp-useref');
-const uglify = require('gulp-uglify');
-const gulpIf = require('gulp-if');
-const cssnano = require('gulp-cssnano');
-const runSequence = require('run-sequence');
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+var browserSync = require('browser-sync').create();
+var useref = require('gulp-useref');
+var uglify = require('gulp-uglify');
+var gulpIf = require('gulp-if');
+var cssnano = require('gulp-cssnano');
+var runSequence = require('run-sequence');
 
 gulp.task('hello', function() {
     console.log('Hello Becky');
@@ -14,7 +14,7 @@ gulp.task('hello', function() {
 gulp.task('browserSync', function() {
     browserSync.init({
         server: {
-            baseDir: 'src'
+            baseDir: ''
         },
     })
 });
@@ -28,6 +28,15 @@ gulp.task('sass', function() {
         }))
 });
 
+gulp.task('js', function (cb) {
+    return gulp.src('src/js/**/*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('js'))
+        .pipe(browserSync.reload({
+            stream: true
+        }))    
+});
+
 gulp.task('useref', function() {
     return gulp.src('src/*.html')
         .pipe(useref())
@@ -38,19 +47,19 @@ gulp.task('useref', function() {
 
 gulp.task('watch', ['browserSync', 'sass'], function() {
     gulp.watch('src/scss/**/*.scss', ['sass']); 
-    gulp.watch('src/*.html', browserSync.reload); 
-    gulp.watch('src/js/**/*.js', browserSync.reload); 
+    gulp.watch('src/js/**/*.js', ['js']); 
+    gulp.watch('*.html', browserSync.reload); 
 });
 
 gulp.task('build', function (callback) {
-    runSequence('sass', 
+    runSequence('sass', 'js' 
         ['useref'],
         callback
     )
 });
 
 gulp.task('default', function (callback) {
-    runSequence(['sass', 'browserSync', 'watch'],
+    runSequence(['sass', 'js', 'browserSync', 'watch'],
         callback
     )
 });
