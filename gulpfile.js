@@ -5,16 +5,11 @@ const useref = require('gulp-useref');
 const uglify = require('gulp-uglify');
 const gulpIf = require('gulp-if');
 const cssnano = require('gulp-cssnano');
-const del = require('del');
 const runSequence = require('run-sequence');
 
 gulp.task('hello', function() {
     console.log('Hello Becky');
 });
-
-gulp.task('clean:dist', function() {
-    return del.sync('dist');
-})
 
 gulp.task('browserSync', function() {
     browserSync.init({
@@ -38,7 +33,7 @@ gulp.task('useref', function() {
         .pipe(useref())
         .pipe(gulpIf('*.js', uglify()))
         .pipe(gulpIf('*.css', cssnano()))
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest(''))
 });
 
 gulp.task('watch', ['browserSync', 'sass'], function() {
@@ -48,8 +43,8 @@ gulp.task('watch', ['browserSync', 'sass'], function() {
 });
 
 gulp.task('build', function (callback) {
-    runSequence('clean:dist', 
-        ['sass', 'useref'],
+    runSequence('sass', 
+        ['useref'],
         callback
     )
 });
