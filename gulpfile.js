@@ -22,7 +22,7 @@ gulp.task('browserSync', function() {
 gulp.task('sass', function() {
     return gulp.src('src/scss/**/*.scss')
         .pipe(sass())
-        .pipe(gulp.dest('src/css'))
+        .pipe(gulp.dest('css'))
         .pipe(browserSync.reload({
             stream: true
         }))
