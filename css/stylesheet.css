@@ -21,7 +21,7 @@ body {
 
 .content {
   max-width: 1000px;
-  min-width: 320px;
+  min-width: 1000px;
   width: 100%;
   margin: 0 auto;
   padding-bottom: 50px; }
@@ -38,8 +38,8 @@ body {
 .margin__bottom--20 {
   margin-bottom: 20px; }
 
-.margin__bottom--40 {
-  margin-bottom: 40px; }
+.margin__bottom--60 {
+  margin-bottom: 60px; }
 
 .heading {
   font-family: 'Poppins', sans-serif;
@@ -75,7 +75,7 @@ body {
 
 .box {
   text-align: center;
-  margin-bottom: 45px; }
+  margin-bottom: 60px; }
   .box__content {
     padding: 15px;
     width: 200px;
@@ -88,18 +88,18 @@ body {
       animation: box-bounce .5s; }
     .box__content--dash::before {
       content: '';
-      height: 30px;
+      height: 40px;
       border-left: 2px dashed #a7a7a7;
       position: absolute;
       left: 100px;
-      top: -40px; }
+      top: -50px; }
     .box__content--dash--base::after {
       content: '';
-      height: 30px;
+      height: 40px;
       border-left: 2px dashed #a7a7a7;
       position: absolute;
       left: 100px;
-      bottom: -40px; }
+      bottom: -50px; }
     .box__content--process {
       background-color: #ffffff;
       border: 2px dashed #b76e79;
@@ -108,7 +108,7 @@ body {
       .box__content--process--start::before {
         content: '';
         width: 118%;
-        height: 100%;
+        height: 116%;
         position: absolute;
         left: -123%;
         top: 50%;
@@ -118,7 +118,7 @@ body {
       .box__content--process--start::after {
         content: '';
         width: 118%;
-        height: 100%;
+        height: 116%;
         position: absolute;
         right: -124%;
         top: 50%;
@@ -128,7 +128,7 @@ body {
       .box__content--process--stop::before {
         content: '';
         width: 118%;
-        height: 100%;
+        height: 116%;
         position: absolute;
         left: -123%;
         bottom: 50%;
@@ -138,7 +138,7 @@ body {
       .box__content--process--stop::after {
         content: '';
         width: 118%;
-        height: 100%;
+        height: 116%;
         position: absolute;
         right: -124%;
         bottom: 50%;

@@ -1,7 +1,7 @@
 (function($) {
 
     var boxes = $('.box')
-	var offset = .9;
+	var offset = 1;
 
 	hideBoxes(boxes, offset);
 
