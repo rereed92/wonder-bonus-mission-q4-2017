@@ -2,6 +2,26 @@ $color-background: #dadada;
 $color-heading: #b76e79;
 $color-box-background: #ffffff;
 
+@keyframes box-bounce
+{
+  	0% 
+  	{
+    	opacity: 0;
+    	transform: translateY(-200px);
+  	}
+
+  	60% 
+  	{
+    	opacity: 1;
+    	transform: translateY(10px);
+  	}
+
+  	100% 
+  	{
+    	transform: translateY(0);
+  	}
+}
+
 * {
     box-sizing: border-box;
 }
@@ -21,6 +41,7 @@ body {
     min-width: 320px;
     width: 100%;
     margin: 0 auto;
+    padding-bottom: 50px;
 }
 
 .padding {
@@ -111,6 +132,15 @@ body {
         width: 200px;
         text-align: center;
         display: inline-block;
+
+        &--hidden {
+			visibility: hidden;
+		}
+
+		&--bounce{
+			visibility: visible;
+			animation: box-bounce .5s;
+		}
 
         &--dash {
             &::before {

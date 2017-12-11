@@ -1,3 +1,13 @@
+@keyframes box-bounce {
+  0% {
+    opacity: 0;
+    transform: translateY(-200px); }
+  60% {
+    opacity: 1;
+    transform: translateY(10px); }
+  100% {
+    transform: translateY(0); } }
+
 * {
   box-sizing: border-box; }
 
@@ -13,7 +23,8 @@ body {
   max-width: 1000px;
   min-width: 320px;
   width: 100%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding-bottom: 50px; }
 
 .padding__top--30 {
   padding-top: 30px; }
@@ -70,6 +81,11 @@ body {
     width: 200px;
     text-align: center;
     display: inline-block; }
+    .box__content--hidden {
+      visibility: hidden; }
+    .box__content--bounce {
+      visibility: visible;
+      animation: box-bounce .5s; }
     .box__content--dash::before {
       content: '';
       height: 30px;
