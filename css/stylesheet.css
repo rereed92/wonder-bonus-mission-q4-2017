@@ -70,32 +70,71 @@ body {
     width: 200px;
     text-align: center;
     display: inline-block; }
+    .box__content--dash::before {
+      content: '';
+      height: 30px;
+      border-left: 2px dashed #a7a7a7;
+      position: absolute;
+      left: 100px;
+      top: -40px; }
+    .box__content--dash--base::after {
+      content: '';
+      height: 30px;
+      border-left: 2px dashed #a7a7a7;
+      position: absolute;
+      left: 100px;
+      bottom: -40px; }
     .box__content--process {
       background-color: #ffffff;
       border: 2px dashed #b76e79;
       border-radius: 20px;
       position: relative; }
-      .box__content--process::before {
-        content: '';
-        height: 30px;
-        border-left: 2px dashed #a7a7a7;
-        position: absolute;
-        left: 50%;
-        top: -35px; }
       .box__content--process--start::before {
-        display: none; }
+        content: '';
+        width: 118%;
+        height: 100%;
+        position: absolute;
+        left: -123%;
+        top: 50%;
+        border-top: 2px dashed #a7a7a7;
+        border-left: 2px dashed #a7a7a7;
+        border-top-left-radius: 20px; }
+      .box__content--process--start::after {
+        content: '';
+        width: 118%;
+        height: 100%;
+        position: absolute;
+        right: -124%;
+        top: 50%;
+        border-top: 2px dashed #a7a7a7;
+        border-right: 2px dashed #a7a7a7;
+        border-top-right-radius: 20px; }
+      .box__content--process--stop::before {
+        content: '';
+        width: 118%;
+        height: 100%;
+        position: absolute;
+        left: -123%;
+        bottom: 50%;
+        border-bottom: 2px dashed #a7a7a7;
+        border-left: 2px dashed #a7a7a7;
+        border-bottom-left-radius: 20px; }
+      .box__content--process--stop::after {
+        content: '';
+        width: 118%;
+        height: 100%;
+        position: absolute;
+        right: -124%;
+        bottom: 50%;
+        border-bottom: 2px dashed #a7a7a7;
+        border-right: 2px dashed #a7a7a7;
+        border-bottom-right-radius: 20px; }
     .box__content--decision {
       border-radius: unset;
       position: relative;
       height: 200px;
-      text-align: center; }
-      .box__content--decision::before {
-        content: '';
-        height: 30px;
-        border-left: 2px dashed #a7a7a7;
-        position: absolute;
-        left: 50%;
-        top: -35px; }
+      text-align: center;
+      padding-top: 64px; }
       .box__content--decision::after {
         content: '';
         position: absolute;

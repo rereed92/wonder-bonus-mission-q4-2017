@@ -112,23 +112,82 @@ body {
         text-align: center;
         display: inline-block;
 
+        &--dash {
+            &::before {
+                content: '';
+                height: 30px;
+                border-left: 2px dashed darken($color-background, 20%);
+                position: absolute;
+                left: 100px;
+                top: -40px;
+            }
+
+            &--base::after {
+                content: '';
+                height: 30px;
+                border-left: 2px dashed darken($color-background, 20%);
+                position: absolute;
+                left: 100px;
+                bottom: -40px;
+            }
+        }
+
         &--process {
             background-color: $color-box-background;
             border: 2px dashed $color-heading;
             border-radius: 20px;
             position: relative;
 
-            &::before {
-                content: '';
-                height: 30px;
-                border-left: 2px dashed darken($color-background, 20%);
-                position: absolute;
-                left: 50%;
-                top: -35px;
+            &--start {
+                &::before {
+                    content: '';
+                    width: 118%;
+                    height: 100%;
+                    position: absolute;
+                    left: -123%;
+                    top: 50%;
+                    border-top: 2px dashed darken($color-background, 20%);
+                    border-left: 2px dashed darken($color-background, 20%);
+                    border-top-left-radius: 20px;
+                }
+
+                &::after {
+                    content: '';
+                    width: 118%;
+                    height: 100%;
+                    position: absolute;
+                    right: -124%;
+                    top: 50%;
+                    border-top: 2px dashed darken($color-background, 20%);
+                    border-right: 2px dashed darken($color-background, 20%);
+                    border-top-right-radius: 20px;
+                }
             }
 
-            &--start::before {
-                display: none;
+            &--stop {
+                &::before {
+                    content: '';
+                    width: 118%;
+                    height: 100%;
+                    position: absolute;
+                    left: -123%;
+                    bottom: 50%;
+                    border-bottom: 2px dashed darken($color-background, 20%);
+                    border-left: 2px dashed darken($color-background, 20%);
+                    border-bottom-left-radius: 20px;
+                }
+
+                &::after {
+                    content: '';
+                    width: 118%;
+                    height: 100%;
+                    position: absolute;
+                    right: -124%;
+                    bottom: 50%;
+                    border-bottom: 2px dashed darken($color-background, 20%);
+                    border-right: 2px dashed darken($color-background, 20%);
+                    border-bottom-right-radius: 20px;
+                }
             }
         }
 
@@ -137,15 +196,7 @@ body {
             position: relative;
             height: 200px;
             text-align: center;
-
-            &::before {
-                content: '';
-                height: 30px;
-                border-left: 2px dashed darken($color-background, 20%);
-                position: absolute;
-                left: 50%;
-                top: -35px;
-            }
+            padding-top: 64px;
 
             &::after {
                 content: '';
